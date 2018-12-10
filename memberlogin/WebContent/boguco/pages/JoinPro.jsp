@@ -1,142 +1,71 @@
-<!--ÃâÃ³: http://all-record.tistory.com/110?category=733042 [¼¼»óÀÇ ¸ðµç ±â·Ï]  -->
-<!-- À§ ÃâÃ³¸¦ ¹ÙÅÁÀ¸·Î »óÈ²¿¡ ¸Âµµ·Ï ÀÛ¼ºÇÔ. -->
 
-
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<!--ì¶œì²˜: http://all-record.tistory.com/110?category=733042 [ì„¸ìƒì˜ ëª¨ë“  ê¸°ë¡]  -->
+<!-- ìœ„ ì¶œì²˜ë¥¼ ë°”íƒ•ìœ¼ë¡œ ìƒí™©ì— ë§žë„ë¡ ìž‘ì„±í•¨. -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <%
 	request.setCharacterEncoding("UTF-8");
-	//ÇÑ±Û ±úÁü ¹æÁö¸¦ À§ÇÑ ÄÚµå.
+	//í•œê¸€ ê¹¨ì§ ë°©ì§€ë¥¼ ìœ„í•œ ì½”ë“œ.
 %>
-
-<!-- ÀÛ¼ºÇÑ ºóÀ» °¡Á®¿À´Â ÄÚµå! -->
+<!-- ìž‘ì„±í•œ ë¹ˆì„ ê°€ì ¸ì˜¤ëŠ” ì½”ë“œ! -->
 <%@ page import="memberlogin.memberBean"%>
-
-
-
 <html>
 <head>
 <link href="../layout/styles/layout.css" rel="stylesheet"
 	type="text/css" media="all">
-<meta charset="EUC-KR">
-<title>°¡ÀÔÀ» ÃàÇÏµå¸³´Ï´Ù!</title>
+<meta charset="UTF-8">
+<title>ê°€ìž…ì„ ì¶•í•˜ë“œë¦½ë‹ˆë‹¤!</title>
 </head>
 <body>
-	<!--À¯Á¤¿¬ : jspÆÄÀÏ ÀüÃ¼ÀûÀÎ css°ü¸®. ->»ó´ÜºÎ , ÇÏ´ÜºÎ ¸µÅ© Ãß°¡-->
-
-
-	<div class="wrapper row1">
-		<header id="header" class="hoc clear">
-			<!-- ################################################################################################ -->
-			<div id="logo" class="fl_left">
-				<h1>
-					<a href="../index.html" style="font-weight: bold">Ãæ°ø°»</a>
-				</h1>
-				<!--»çÀÌÆ® ÀÌ¸§-->
-			</div>
-			<nav id="mainav" class="fl_right">
-				<ul class="clear">
-					<li class="active"><a href="index.html">Home</a></li>
-					<!--Ã¹ È­¸é-->
-					<li><a class="drop">°øÁö»çÇ×</a>
-					<!--°øÁö»çÇ× ¸Þ´º-->
-						<ul>
-							<li class="submenu"><a href="notice.html">Ãæ³²´ë °øÁö»çÇ×</a></li>
-							<!--Ãæ³²´ë °øÁö»çÇ×-->
-							<li class="submenu"><a href="#">±â¼÷»ç °øÁö»çÇ×</a></li>
-							<!--±â¼÷»ç °øÁö»çÇ×-->
-							<li class="submenu"><a href="#">SW »ç¾÷´Ü °øÁö»çÇ×</a></li>
-							<!--SW °øÁö»çÇ×-->
-							<li class="submenu"><a href="#">ÄÄÇ»ÅÍ°øÇÐ°ú °øÁö»çÇ×</a></li>
-							<!--ÄÄ°ø °øÁö»çÇ×-->
-						</ul></li>
-
-					<li><a class="drop">Å°¿öµå ¾Ë¸²</a>
-					<!--Å°¿öµå ¾Ë¸² ¸Þ´º-->
-						<ul>
-							<li class="submenu"><a href="alarm.html" target="iframe">¾Ë¸²
-									¼³Á¤</a></li>
-							<!--¾Ë¸² ¼³Á¤-->
-							<li class="submenu"><a href="alarmconfirm.html"
-								target="iframe">¾Ë¸² È®ÀÎ</a></li>
-							<!--¾Ë¸² È®ÀÎ-->
-						</ul></li>
-				</ul>
-				<form action="#">
-					<select><option selected="selected" value="">MENU</option>
-						<option value="index.html">Home</option>
-						<option>°øÁö»çÇ×</option>
-						<option value="notice.html">- - Ãæ³²´ë °øÁö»çÇ×</option>
-						<option value="#">- - ±â¼÷»ç °øÁö»çÇ×</option>
-						<option value="#">- - SW »ç¾÷´Ü °øÁö»çÇ×</option>
-						<option value="#">- - ÄÄÇ»ÅÍ°øÇÐ°ú °øÁö»çÇ×</option>
-						<option>Å°¿öµå ¾Ë¸²</option>
-						<option value="alarm.html">- - ¾Ë¸² ¼³Á¤</option>
-						<option value="alarmconfirm.html">- - ¾Ë¸² È®ÀÎ</option></select>
-				</form>
-			</nav>
-			<!-- ¿©±â±îÁö°¡ ¸ÞÀÎÆäÀÌÁö À­ µå·Ó´Ù¿î ¸Þ´º ¼³Á¤. -->
-		</header>
-	</div>
-	<!-- idÆÄ¶ó¹ÌÅÍ´Â id ÇÁ·ÎÆÛÆ¼·Î Àû¿ëÇÏ´Â µî °¢°¢ÀÇ ¿ä¼ÒµéÀ» ¸ðµÎ ÁöÁ¤ÇÒ ¼ö ÀÖ´Ù.-->
+	<!--ìœ ì •ì—° : jspíŒŒì¼ ì „ì²´ì ì¸ cssê´€ë¦¬. ->ìƒë‹¨ë¶€ , í•˜ë‹¨ë¶€ ë§í¬ ì¶”ê°€-->
+	<!--ìœ ì •ì—° : ë©”ë‰´ê°€ í¬í•¨ëœ ìƒë‹¨ì„ include-->
+	<%@include file="dropdown.jsp"%>
+	<!-- idíŒŒë¼ë¯¸í„°ëŠ” id í”„ë¡œí¼í‹°ë¡œ ì ìš©í•˜ëŠ” ë“± ê°ê°ì˜ ìš”ì†Œë“¤ì„ ëª¨ë‘ ì§€ì •í•  ìˆ˜ ìžˆë‹¤.-->
 	<jsp:useBean id="memberBean" class="memberlogin.memberBean" />
 	<jsp:setProperty property="*" name="memberBean" />
-
 	<div class="wrapper row3">
 		<main class="hoc container clear"> <!-- main body --> <!-- ################################################################################################ -->
-		<h1>È¸¿ø°¡ÀÔ È®ÀÎ</h1>
-		<!--È¸¿ø°¡ÀÔ È®ÀÎ ÄÚµå!-->
+		<h1>íšŒì›ê°€ìž… í™•ì¸</h1>
+		<!--íšŒì›ê°€ìž… í™•ì¸ ì½”ë“œ!-->
 		<div id="join">
 			<div id="wrapper">
-				<br>
-				<br> <b><font size="5" color="gray">È¸¿ø°¡ÀÔ Á¤º¸¸¦ È®ÀÎÇÏ¼¼¿ä.</font></b>
-				<br>
-				<br> <font color="blue"><%=memberBean.getName()%></font>´Ô °¡ÀÔÀ»
-				ÃàÇÏµå¸³´Ï´Ù. <br>
-				<br>
-
+				<br> <br> <b><font size="5" color="gray">íšŒì›ê°€ìž…
+						ì •ë³´ë¥¼ í™•ì¸í•˜ì„¸ìš”.</font></b> <br> <br> <font color="blue"><%=memberBean.getName()%></font>ë‹˜
+				ê°€ìž…ì„ ì¶•í•˜ë“œë¦½ë‹ˆë‹¤. <br> <br>
 				<table>
 					<tr>
-						<td id="title">¾ÆÀÌµð</td>
+						<td id="title">ì•„ì´ë””</td>
 						<td><%=memberBean.getId()%></td>
 					</tr>
-
 					<tr>
-						<td id="title">ºñ¹Ð¹øÈ£</td>
+						<td id="title">ë¹„ë°€ë²ˆí˜¸</td>
 						<td><%=memberBean.getPassword()%></td>
 					</tr>
-
 					<tr>
-						<td id="title">ÀÌ¸§</td>
-						<td><%=memberBean.getName() %></td>
+						<td id="title">ì´ë¦„</td>
+						<td><%=memberBean.getName()%></td>
 					</tr>
-
-
 					<tr>
-						<td id="title">»ýÀÏ</td>
+						<td id="title">ìƒì¼</td>
 						<td><%=memberBean.getBirthday()%></td>
 					</tr>
-
 					<tr>
-						<td id="title">ÀÌ¸ÞÀÏ</td>
+						<td id="title">ì´ë©”ì¼</td>
 						<td><%=memberBean.getEmail()%></td>
 					</tr>
-
 					<tr>
-						<td id="title">ÈÞ´ëÀüÈ­</td>
+						<td id="title">íœ´ëŒ€ì „í™”</td>
 						<td><%=memberBean.getPhone()%></td>
 					</tr>
 					<tr>
-						<td id="title">Èï¹Ì»çÇ×</td>
+						<td id="title">í¥ë¯¸ì‚¬í•­</td>
 						<td><%=memberBean.getSubject()%></td>
 					</tr>
 				</table>
-
 				<br>
-				<!--¹öÆ°À» ´©¸£¸é ·Î±×ÀÎÃ¢À¸·Î ÀÌµ¿ÇÑ´Ù-->
-				<a href="join.html"> <input type="button" value="È®ÀÎ"
+				<!--ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ë¡œê·¸ì¸ì°½ìœ¼ë¡œ ì´ë™í•œë‹¤-->
+				<a href="join.html"> <input type="button" value="í™•ì¸"
 					class="submit"></a>
 			</div>
 		</div>
@@ -155,8 +84,5 @@
 			<li><a href="http://computer.cnu.ac.kr/">Computer</a></li>
 		</ul>
 	</nav>
-
-
-
 </body>
 </html>
