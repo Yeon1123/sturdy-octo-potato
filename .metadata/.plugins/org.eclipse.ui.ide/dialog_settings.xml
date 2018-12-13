@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\유정연\Desktop\텀프로젝트\jsp\memberlogin"/>
 		<item value="C:\Users\유정연\Desktop\텀프로젝트\jsp"/>
 	</list>
 	<section name="ExternalProjectImportWizard">
@@ -8,8 +9,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\유정연\Desktop\텀프로젝트\jsp\memberlogin"/>
 			<item value="C:\Users\유정연\Desktop\텀프로젝트\jsp"/>
+			<item value="C:\Users\유정연\Desktop\텀프로젝트\jsp\memberlogin"/>
 			<item value="C:\Users\유정연\Desktop\텀프로젝트\boguco"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
