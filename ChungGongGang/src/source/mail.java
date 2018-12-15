@@ -1,3 +1,5 @@
+//메일을 전송하는 메소드.
+
 package source;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,10 +19,14 @@ import javax.mail.internet.MimeMessage;
 
 //출처: http://fruitdev.tistory.com/15 [과일가게 개발자]
 public class mail {
-	public static void main(String[] args) {
-		String htmltext = ""
-				+ "<html>"+"<h1>충남대학교 공지 갱신사이트!</h1>"+"<p>회원님 반갑습니다.</p>"+"<p>회원님께서 작성하신 키워드가 포함된 공지사항이 갱신되었습니다.</p>"+"<p><a href=\"++여기에 링크 걸기!\">공지사항 확인하기!</a></p>\r\n" + 
-						"<p>----------------------------------------------</p>"+"<a href=\"++여기에 링크 걸기!\" style=\"font-size:10px\">충공갱 바로가기</a>"+"<p>메일 수신을 원하지 않으시면 <a href=\"\" style=\"font-weight=bold\">여기</a></p>";
+	public void sendMail(String id, String mail){
+
+		String htmltext = 
+				"<html>"+"<h1>충남대학교 공지 갱신사이트!</h1>"+
+						"<p>"+id+"회원님 반갑습니다.</p>"+"<p>회원님의 충공갱 회원 가입을 진심으로 축하합니다!</p>"+
+						"<a href=\"http://localhost:8080/ChungGongGang/chungGongGang/pages/cnuNew.jsp\">충남대학교 새소식 확인하기!</a>"+ 
+						"<p>----------------------------------------------</p>"+
+						"<a href=\"http://localhost:8080/ChungGongGang/chungGongGang/index.jsp\" style=\"font-size:10px\">충공갱 바로가기</a>";
 
 		// 항목
 
@@ -47,7 +53,7 @@ public class mail {
 			InternetAddress to = new InternetAddress("wnqusdml11@naver.com");
 			msg.setRecipient(Message.RecipientType.TO, to);
 			// 이메일 제목
-			msg.setSubject("<<충남대학교 공지 갱신사이트 키워드 알림 발송>>", "UTF-8");
+			msg.setSubject("<<충남대학교 공지 갱신사이트 회원 가입을 축하드립니다!>>", "UTF-8");
 			// 이메일 내용
 			msg.setText("내용", "UTF-8");
 			msg.setContent(htmltext, "text/html; charset=utf-8");

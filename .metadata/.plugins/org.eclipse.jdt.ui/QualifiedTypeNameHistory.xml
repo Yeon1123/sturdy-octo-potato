@@ -3,4 +3,5 @@
 <fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.txw2.Document"/>
 <fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
+<fullyQualifiedTypeName name="source.SaveData"/>
 </qualifiedTypeNameHistroy>

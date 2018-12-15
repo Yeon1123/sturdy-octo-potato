@@ -110,24 +110,21 @@ main h1 { margin : 0 0 20px 0; color: #43BFCB; font-weight: bold; }
 .login .join{	grid-area: j;	margin: 1px 0 0 0;	font-size: small;	text-align: right;}
 
 /*윤지애 : Alarm */
-#alarm{		width: 300px;	margin: auto;}
-#alarm h1 {	font-size: 3em;}
-#alarm .caption {	text-decoration-line: none;	color: salmon;}
-#alarm .input {	width: 300px; height: 35px; background-color: white;}
-#alarm .submit:hover{color:#FFFFFF; background-color:#43BFCB; border-color:#43BFCB;}
-#alarm .submit{width: 300px; height: 40px; border: 1px solid black; color:inherit; background-color:transparent; border-color:inherit;}
-#alarm .sub{	display: flex; font-size: 15px	}
-#alarm .sub > .new{float: left}
-#alarm .sub > .newtext{float: left}
-#alarm .sub > .keyword{ margin: 1px 0 0 0;	float:left}
-#alarm .sub > .keywordtext{float: left}
-#alarm .formcaption{font-size:1.3em;}
+a.alarmconfirm {float: right; text-align: center; width: 90px; height: 40px; border: 1px solid black; color:inherit; background-color:white; padding:8px;}
+a.alarmconfirm:hover{color:#FFFFFF; background-color:#43BFCB; border-color:#43BFCB;}
 
 /* 윤지애 : Join*/
 #join{	width: 414px;	margin: auto;}
 #join .submit:hover{color:#FFFFFF; background-color:#43BFCB; border-color:#43BFCB;}
 #join .submit{margin: auto;width: 399px; height: 40px; border: 1px solid black; color:inherit; background-color:transparent; }
 #join .input {	width: 300px; height: 35px; background-color: white;	margin-bottom: 5px; display:inline; }
+
+/* 윤지애 : alarmButton */
+/* .alarmconfirm button:hover{color:#FFFFFF; background-color:#43BFCB; border-color:#43BFCB;}
+.alarmconfirm button{float:right; width: 100px; height: 40px; border: 1px solid black; color:#43BFCB; background-color:transparent; }
+.alarmconfirms button:hover{color:#FFFFFF; background-color:#43BFCB; border-color:#43BFCB;}
+.alarmconfirms button{margin:auto; width: 50px; height: 25px; border: 1px solid black; color:#43BFCB; background-color:transparent; } */
+
 
 /* Comments */
 #comments ul{margin:0 0 40px 0; padding:0; list-style:none;}

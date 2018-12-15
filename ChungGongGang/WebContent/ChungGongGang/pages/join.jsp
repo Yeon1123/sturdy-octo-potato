@@ -119,5 +119,6 @@
 	<!--유정연 : footer-->
 	<!--유정연 : footer를 include-->
 	<%@include file="Under_part.jsp"%>
+	<script src="../layout/scripts/join.js"></script>
 </body>
 </html>

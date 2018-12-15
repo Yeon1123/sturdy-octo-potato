@@ -1,4 +1,4 @@
-<!--(pages폴더 내의) 화면 최상단의 파트를 분리 -->
+<!-- (index.jsp파일의)화면 최상단의 파트를 분리 -->
 <!-- 유정연 : iclude를 위한 상 하부를 따로 관리하기 위해 jsp파일을 작성 -->
 <!-- 20181215 로그인 확인 및 로그아웃까지 구현 -->
 <!DOCTYPE html>
@@ -24,6 +24,7 @@ Licence URI: https://www.os-templates.com/template-terms
 </head>
 
 <body>
+
 	<div class="wrapper row0">
 		<div id="topbar" class="hoc clear">
 			<!-- ################################################################################################ -->
@@ -38,15 +39,16 @@ Licence URI: https://www.os-templates.com/template-terms
 			</div>
 			<div class="fl_right">
 				<ul class="nospace">
-					<li><a href="../index.jsp"><i class="fa fa-lg fa-home"></i></a></li>
-					<li><a href="about.jsp">About</a></li>
+					<li><a href="index.jsp"><i class="fa fa-lg fa-home"></i></a></li>
+					<li><a href="pages/about.jsp">About</a></li>
+					<!--세션이 설정되어있으면(로그인) (아이디)님 환영합니다! 가 나타나도록, 로그인이 안된 상황이면 로그인/회원가입창이 나타나게 한다.-->
 					<%if(session.getAttribute("sessionID")==null){%>
-					<% out.println("<li><a href=\"login.jsp\">Login</a></li><!--로그인--><li><a href=\"join.jsp\">Register</a></li>");%>
+					<% out.println("<li><a href=\"pages/login.jsp\">Login</a></li><!--로그인--><li><a href=\"pages/join.jsp\">Register</a></li>");%>
 					<%} else{%>
 					<%out.print("<li>");%>
 					<%=session.getAttribute("sessionID")%>			
 					<%out.print("님 환영합니다!</li>"); %>
-					<%out.print("<a href=\"logout.jsp\" ><li>로그아웃</li></a>"); %>
+					<%out.print("<a href=\"pages/logout.jsp\" ><li>로그아웃</li></a>"); %>
 					<%} %>
 					<!--회원가입-->
 				</ul>

@@ -12,6 +12,12 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <html>
 <!--윤지애 : 탭 이름-->
+<%if(session.getAttribute("sessionID")==null){
+	out.println("<script>if(window.confirm(\"로그인이 필요합니다.\")){window.open(\"login.jsp\");}else{window.open(\"../index.jsp\");}</script>");
+}else{
+	
+}%>
+
 <head>
 <title>CNU information | Alarm</title>
 <meta charset="utf-8">

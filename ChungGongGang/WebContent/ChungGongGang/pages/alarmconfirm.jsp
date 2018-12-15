@@ -8,6 +8,7 @@
 	request.setCharacterEncoding("UTF-8");
 	//한글 깨짐 방지를 위한 코드.
 %>
+
 <!-- 작성한 빈을 가져오는 코드! -->
 <%@ page import="source.alarm"%>
 <%@ page import="source.alarmData"%>
@@ -19,7 +20,16 @@ Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
 <html>
+
 <!--윤지애 : 탭 이름-->
+<%
+	if (session.getAttribute("sessionID") == null) {
+		out.println(
+				"<script>if(window.confirm(\"로그인이 필요합니다.\")){window.open(\"login.jsp\");}else{window.open(\"../index.jsp\");}</script>");
+	} else {
+
+	}
+%>
 <head>
 <title>CNU information | Alarm</title>
 <meta charset="utf-8">
@@ -30,6 +40,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	type="text/css" media="all">
 </head>
 <body id="top">
+
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
@@ -89,27 +100,28 @@ Licence URI: https://www.os-templates.com/template-terms
 		<table>
 
 			<thead>
-				<th style="width: 10%">번호</th>
-				<th style="width: 15%">게시판</th>
-				<th style="width: 20%">알림방식</th>
-				<th style="width: 32%">키워드</th>
-				<th style="width: 15%">설정날짜</th>
-				<th style="width: 8%">삭제</th>
-			</thead>
+                <th style="width: 10%">번호</th>
+                <th style="width: 15%">게시판</th>
+                <th style="width: 20%">알림방식</th>
+                <th style="width: 40%">키워드</th>
+                <th style="width: 15%">설정날짜</th>
+            </thead>
 
 			<tbody>
 				<%
 					ArrayList<String> a = save.getList();
+					int j;
 					for (int i = 0; i < a.size(); i += 6) {
 				%>
 
 				<tr>
-					<td><%=a.get(i + 1)%></td>
+					<td><%=a.get(i)%></td>
 					<td><%=a.get(i + 2)%></td>
 					<td><%=a.get(i + 3)%></td>
 					<td><%=a.get(i + 4)%></td>
 					<td><%=a.get(i + 5)%></td>
-					<td><button onclick="delrow()">삭제</button></td>
+					<!-- <td><a class = "alarmconfirms" href="alarmconfirm.jsp"><button onclick="if(confirm('정말로 삭제하시겠습니까?')){location.href='alarmDelete.jsp'<%-- <%save.delRow(a.get(i)); %> --%> alert('삭제되었습니다.')};">삭제</button></a></td>
+					 -->
 				</tr>
 
 				<%
@@ -117,7 +129,10 @@ Licence URI: https://www.os-templates.com/template-terms
 				%>
 			</tbody>
 		</table>
+		<!-- 알람 정보 모두 삭제하기 -->
+		<a class="alarmconfirm" href="alarmDelete.jsp">전체 삭제</a>
 		<div style="height: 150px";></div>
+ 
 		<!-- ################################################################################################ -->
 		<!-- / main body -->
 		<div class="clear"></div>

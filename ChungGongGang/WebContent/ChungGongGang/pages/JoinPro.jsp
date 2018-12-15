@@ -12,6 +12,7 @@
 <!-- 작성한 빈을 가져오는 코드! -->
 <%@ page import="source.memberBean"%>
 <%@ page import="source.SaveData"%>
+<%@ page import="source.mail"%>
 <html>
 <head>
 <link href="../layout/styles/layout.css" rel="stylesheet"
@@ -25,11 +26,14 @@
 	<%@include file="dropdown.jsp"%>
 	<!-- id파라미터는 id 프로퍼티로 적용하는 등 각각의 요소들을 모두 지정할 수 있다.-->
 	<jsp:useBean id="memberBean" class="source.memberBean" />
-	<jsp:useBean id="save" class="source.SaveData" /> <!-- database에 저장하기 위한 클래스 호출 -->
+	<jsp:useBean id="save" class="source.SaveData" />
+	<jsp:useBean id="mail" class="source.mail"/>
+	<!-- database에 저장하기 위한 클래스 호출과 확인 메일 전송을 위한 -->
 	<jsp:setProperty property="*" name="memberBean" />
-	
-	<%	/* 윤지애 : 데이터베이스에 회원가업 정보 데이터 저장. */
+	<%
+		/* 윤지애 : 데이터베이스에 회원가업 정보 데이터 저장. */
 		save.dataSave(memberBean); // 회원 정보를담고 있는 memberBean을 database 테이블에 저장한다.
+		mail.sendMail(memberBean.getId(),memberBean.getPassword());
 	%>
 	<div class="wrapper row3">
 		<main class="hoc container clear"> <!-- main body --> <!-- ################################################################################################ -->
@@ -66,15 +70,17 @@
 						<td><%=memberBean.getPhone()%></td>
 					</tr>
 					<tr>
-					<!-- 유정연 : 흥미사항 추가. (로그인 구현 화면에 맞게 table을 원본에서 수정함) -->
+						<!-- 유정연 : 흥미사항 추가. (로그인 구현 화면에 맞게 table을 원본에서 수정함) -->
 						<td id="title">흥미사항</td>
 						<td><%=memberBean.getSubject()%></td>
 					</tr>
 				</table>
 				<br>
 				<!--버튼을 누르면 로그인창으로 이동한다-->
-				<a href="join.jsp"> <input type="button" value="확인"class="submit" ></a>
+				<a href="login.jsp"> <input type="button" value="확인"
+					class="submit"></a>
 			</div>
+			<%String mailadress = memberBean.getEmail().toString(); %>
 		</div>
 		<!-- ################################################################################################ -->
 		<!-- / main body -->

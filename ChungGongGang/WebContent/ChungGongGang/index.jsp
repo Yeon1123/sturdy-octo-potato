@@ -23,36 +23,9 @@ Licence URI: https://www.os-templates.com/template-terms
 </head>
 
 <body id="top">
-	<!-- ################################################################################################ -->
 
-	<!-- 유정연 :  화면 최상단-->
-	<div class="wrapper row0">
+		<%@include file="Upper_part.jsp"%>
 
-		<div id="topbar" class="hoc clear">
-			<!-- ################################################################################################ -->
-			<div class="fl_left">
-				<!--유정연 : 전화번호, 이메일이 화면 왼쪽으로 나타남.-->
-				<ul class="nospace">
-					<li><i class="fa fa-phone"></i> 042-532-7248</li>
-					<li><i class="fa fa-envelope-o"></i> dbwjddus1997@gmail.com |
-						yja2397@gmail.com</li>
-				</ul>
-			</div>
-			<!--유정연 : 화면 최상단의 메뉴가 오른쪽으로 나타남.-->
-			<div class="fl_right">
-				<ul class="nospace">
-					<li><a href="index.jsp"><i class="fa fa-lg fa-home"></i></a></li>
-					<li><a href="pages/about.jsp">About</a></li>
-					<li><a href="pages/login.jsp">Login</a></li>
-					<li><a href="pages/join.jsp">Register</a></li>
-				</ul>
-			</div>
-			<!-- ################################################################################################ -->
-		</div>
-	</div>
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
 
 	<!-- Top Background Image Wrapper 유정연 : 이미지가 배경사진으로 들어간 레이어 div -->
 	<div class="bgded overlay"

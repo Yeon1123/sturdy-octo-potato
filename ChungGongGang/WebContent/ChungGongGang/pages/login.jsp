@@ -9,7 +9,6 @@ Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
 
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -27,35 +26,22 @@ Licence URI: https://www.os-templates.com/template-terms
     <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!--유정연 : 최상단-->
 <!--유정연 : 최상단 include-->
 	<%@include file="Upper_part.jsp"%>
 
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
 <!--유정연 : 메뉴가 포함된 상단-->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
     <!-- ################################################################################################ -->
     <!--유정연 : 메뉴가 포함된 상단을 include-->
 		<%@include file="dropdown.jsp"%>
-    <!-- ################################################################################################ -->
-    <!-- ################################################################################################ -->
-    <!-- ################################################################################################ -->
     <!--윤지애 : 세부 메뉴-->
     <div class="wrapper row2">
         <div id="breadcrumb" class="hoc clear">
             <!-- ################################################################################################ -->
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="../index.jsp">Home</a></li>
+                <li><a href="login.jsp">Login</a></li>
             </ul>
             <!-- ################################################################################################ -->
         </div>
@@ -63,36 +49,45 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
 </div>
 <!-- End Top Background Image Wrapper -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <!--윤지애 :  로그인 구현-->
+<jsp:useBean id="memberBean" class="source.memberBean" />
+<jsp:useBean id="save" class="source.SaveData" /> <!-- login하여 아이디와 비밀번호를 검사하기 위한 클래스 호출 -->
+<jsp:setProperty property="*" name="memberBean" />
 <div class="wrapper row3">
     <main class="hoc container clear">
         <!-- main body -->
         <!-- ################################################################################################ -->
         <h1>로그인</h1><!--로그인-->
         <div class="login">
-            <!--로그인 버튼 누르면 처음 창으로 돌아감.-->
-            <form action="../index.html" method="post">
+            <!--로그인 버튼 누르면 확인용 jsp파일로 넘어간다..-->
+            <form action="loginPro.jsp" method="post">
                 <!--id, password, 자동로그인 구현-->
                 <p><input type="text" name="id" id="id" class="input" autofocus required placeholder="아이디"></p>
                 <p><input type="password" name="password" id="password" class="input" required placeholder="비밀번호"></p>
                 <!--loginAlert(): 로그인 되었습니다 alert 창 출력하는 함수-->
                 <p><input type="submit" value="로그인" onclick="loginAlert()" class = "submit"></p>
                 <div class="sub">
-                    <p class="join"><a href="join.html" style="text-decoration-line: none; color: indigo;">회원가입</a></p>
+                    <p class="join"><a href="join.jsp" style="text-decoration-line: none; color: indigo;">회원가입</a></p>
                 </div>
+        
             </form>
+            
+            <%
+            String gotothe = request.getParameter("gotothe");
+            if(gotothe !=null && gotothe.equals("0")){
+            	out.println("<script> alert(\" 비밀번호가 잘못되었습니다. \") </script>");
+            }
+            else if(gotothe !=null&&gotothe.equals("-1")){
+            	out.println("<script> alert(\" 아이디가 잘못되었습니다. \") </script>");
+            }
+            
+            %>
         </div>
         <!-- ################################################################################################ -->
         <!-- / main body -->
         <div class="clear"></div>
     </main>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <!-- Footer Background Image Wrapper -->
 	<!--유정연 : footer를 include-->
 	<%@include file="Under_part.jsp"%>
