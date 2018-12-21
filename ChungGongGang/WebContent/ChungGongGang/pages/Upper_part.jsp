@@ -38,6 +38,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			</div>
 			<div class="fl_right">
 				<ul class="nospace">
+			<!-- 세션을 설정하여 로그인시 oo님 환영합니다/아닌 경우 로그인, 회원가입창을 나타내게 했다. -->
 					<li><a href="../index.jsp"><i class="fa fa-lg fa-home"></i></a></li>
 					<li><a href="about.jsp">About</a></li>
 					<%if(session.getAttribute("sessionID")==null){%>

@@ -33,7 +33,7 @@
 	<%
 		/* 윤지애 : 데이터베이스에 회원가업 정보 데이터 저장. */
 		save.dataSave(memberBean); // 회원 정보를담고 있는 memberBean을 database 테이블에 저장한다.
-		mail.sendMail(memberBean.getId(),memberBean.getPassword());
+		mail.sendMail(memberBean.getId(),memberBean.getEmail());
 	%>
 	<div class="wrapper row3">
 		<main class="hoc container clear"> <!-- main body --> <!-- ################################################################################################ -->

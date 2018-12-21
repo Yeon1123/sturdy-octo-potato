@@ -22,7 +22,7 @@ public class mail {
 	public void sendMail(String id, String mail){
 
 		String htmltext = 
-				"<html>"+"<h1>충남대학교 공지 갱신사이트!</h1>"+
+				"<html>"+"<meta charset=\"utf-8\">"+"<h1>충남대학교 공지 갱신사이트!</h1>"+
 						"<p>"+id+"회원님 반갑습니다.</p>"+"<p>회원님의 충공갱 회원 가입을 진심으로 축하합니다!</p>"+
 						"<a href=\"http://localhost:8080/ChungGongGang/chungGongGang/pages/cnuNew.jsp\">충남대학교 새소식 확인하기!</a>"+ 
 						"<p>----------------------------------------------</p>"+
@@ -50,7 +50,7 @@ public class mail {
 			// 이메일 발신자
 			msg.setFrom(from);
 			// 이메일 수신자
-			InternetAddress to = new InternetAddress("wnqusdml11@naver.com");
+			InternetAddress to = new InternetAddress(mail);
 			msg.setRecipient(Message.RecipientType.TO, to);
 			// 이메일 제목
 			msg.setSubject("<<충남대학교 공지 갱신사이트 회원 가입을 축하드립니다!>>", "UTF-8");
@@ -62,7 +62,7 @@ public class mail {
 
 			// 메일보내기
 			javax.mail.Transport.send(msg);
-			System.out.println("보내졌어요!");
+			//System.out.println("보내졌어요!");
 
 		} catch (AddressException addr_e) {
 			addr_e.printStackTrace();

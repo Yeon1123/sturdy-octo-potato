@@ -71,7 +71,7 @@ Licence URI: https://www.os-templates.com/template-terms
                 </div>
         
             </form>
-            
+            <!-- 유정연 | 윤지애 : 비밀번호, 아이디 오류를 알려주는 코드. -->
             <%
             String gotothe = request.getParameter("gotothe");
             if(gotothe !=null && gotothe.equals("0")){
